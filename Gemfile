@@ -39,7 +39,11 @@ group :development, :test do
   gem 'better_errors'
   gem 'rails_12factor', group: :production
   gem 'puma',           group: :production
-end
+  gem 'bootstrap-sass'
+  gem 'font-awesome-sass'
+  gem 'simple_form'
+  gem 'autoprefixer-rails'
+  end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
@@ -49,4 +53,5 @@ group :development do
   gem 'spring'
 end
 
+gem 'rspec-rails', group: [ :test ]
 gem 'rspec-rails', group: [ :test ]

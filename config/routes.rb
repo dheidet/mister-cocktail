@@ -1,4 +1,19 @@
 Rails.application.routes.draw do
+  root to: 'cocktails#index'
+  resources :cocktails, only: [:index, :show, :new, :create] do
+    resources :doses, only: [:new, :create, :destroy]
+  end
+  # resources :doses, only: [:destroy]
+
+  #/cocktails -> INDEX
+  #/cocktails/new -> FORM POUR CREER NEW COCKTAIL
+  #/cocktails -> CREATE
+  #/cocktails/:id -> SHOW
+  #/cocktails/:id/doses -> FORM POUR CREER UNE NOUVELLE DOSE
+  #/cocktails/:id/doses -> CREATE
+  #/cocktails/:cocktail_id/doses/:id -> DELETE
+  #/doses/:id -> DELETE
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
